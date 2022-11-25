@@ -107,5 +107,5 @@ class SnakeGame:
 if __name__ == "__main__":
     game = SnakeGame(gui = True)
     game.start()
-    for _ in range(20):
-        game.step(randint(0,3))
+    while True:
+        game.step(0)
