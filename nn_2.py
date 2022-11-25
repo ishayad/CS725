@@ -119,7 +119,7 @@ class SnakeNN:
     def test_model(self, model):
         steps_arr = []
         scores_arr = []
-        for _ in range(self.test_games):
+        for i in range(self.test_games):
             steps = 0
             game_memory = []
             game = SnakeGame()
@@ -134,12 +134,13 @@ class SnakeNN:
                 done, score, snake, food  = game.step(game_action)
                 game_memory.append([prev_observation, action])
                 if done:
-                    print('-----')
+                    print("Game ID",i)
                     print(steps)
-                    print(snake)
-                    print(food)
-                    print(prev_observation)
-                    print(predictions)
+                    #print(snake)
+                    #print(food)
+                    #print(prev_observation)
+                    #print(predictions)
+                    print(score)
                     break
                 else:
                     prev_observation = self.generate_observation(snake, food)
